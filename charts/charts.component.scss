@@ -1,0 +1,31 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  background: #111827;
+  padding: 20px;
+  border-radius: 16px;
+}
+options: {
+  plugins: {
+    legend: {
+      labels: {
+        color: '#e5e7eb'
+      }
+    }
+  },
+  scales: {
+    x: {
+      ticks: { color: '#9ca3af' },
+      grid: { color: 'rgba(255,255,255,0.05)' }
+    },
+    y: {
+      ticks: { color: '#9ca3af' },
+      grid: { color: 'rgba(255,255,255,0.05)' }
+    }
+  }
+}

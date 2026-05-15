@@ -1,0 +1,86 @@
+<div class="dashboard-container">
+  <div class="search-box">
+    <h2>Dashboard do Clima</h2>
+    <div class="search-form">
+      <input 
+        type="text" 
+        [(ngModel)]="city" 
+        (keyup.enter)="loadWeather(city)"
+        placeholder="Digite o nome da cidade..."
+        class="search-input"
+      />
+      <button (click)="loadWeather(city)" class="search-btn">
+        ?? Buscar
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando dados...</p>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <p>?? {{ error }}</p>
+  </div>
+
+  <div *ngIf="weatherData && !loading" class="weather-dashboard">
+    <div class="weather-header">
+      <h2>?? {{ weatherData.city }}, {{ weatherData.country }}</h2>
+      <p class="timezone">?? {{ weatherData.timezone }}</p>
+    </div>
+
+    <div class="current-weather">
+      <div class="current-main">
+        <div class="temp-display">
+          <span class="temp">{{ weatherData.current?.temperature_2m }}°</span>
+          <span class="condition">{{ getWeatherDescription(weatherData.current?.weather_code) }}</span>
+        </div>
+      </div>
+
+      <div class="current-details">
+        <div class="detail-item">
+          <span class="icon">??</span>
+          <span class="label">Umidade</span>
+          <span class="value">{{ weatherData.current?.relative_humidity_2m }}%</span>
+        </div>
+        <div class="detail-item">
+          <span class="icon">??</span>
+          <span class="label">Vento</span>
+          <span class="value">{{ weatherData.current?.wind_speed_10m }} km/h</span>
+        </div>
+        <div class="detail-item">
+          <span class="icon">??</span>
+          <span class="label">Nuvens</span>
+          <span class="value">{{ weatherData.current?.cloud_cover }}%</span>
+        </div>
+        <div class="detail-item">
+          <span class="icon">???</span>
+          <span class="label">Precipitação</span>
+          <span class="value">{{ weatherData.current?.precipitation }} mm</span>
+        </div>
+        <div class="detail-item">
+          <span class="icon">??</span>
+          <span class="label">Pressão</span>
+          <span class="value">{{ weatherData.current?.pressure_msl }} hPa</span>
+        </div>
+        <div class="detail-item">
+          <span class="icon">???</span>
+          <span class="label">Sensação</span>
+          <span class="value">{{ weatherData.current?.apparent_temperature }}°C</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <h3>?? Previsão dos Próximos 7 Dias</h3>
+      <button (click)="loadForecast()" class="load-forecast-btn">
+        Carregar Gráfico
+      </button>
+      
+      <div *ngIf="forecastData" class="chart-container">
+        <canvas id="weatherChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

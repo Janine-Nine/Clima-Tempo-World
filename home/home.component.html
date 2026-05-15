@@ -1,0 +1,93 @@
+<div class="home-container">
+  <div class="search-box">
+    <h2>Buscar Clima</h2>
+    <div class="search-form">
+      <input 
+        type="text" 
+        [(ngModel)]="city" 
+        (keyup.enter)="searchWeather()"
+        placeholder="Digite o nome da cidade..."
+        class="search-input"
+      />
+      <button (click)="searchWeather()" class="search-btn">
+        ?? Buscar
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando dados do clima...</p>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <p>?? {{ error }}</p>
+  </div>
+
+  <div *ngIf="weatherData && !loading" class="weather-result">
+    <div class="weather-header">
+      <h2>?? {{ weatherData.city }}, {{ weatherData.country }}</h2>
+    </div>
+
+    <div class="weather-cards">
+      <div class="weather-card">
+        <div class="card-icon">???</div>
+        <div class="card-content">
+          <h3>Temperatura</h3>
+          <p class="temp-value">{{ weatherData.current?.temperature_2m }}°C</p>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <div class="card-icon">??</div>
+        <div class="card-content">
+          <h3>Umidade</h3>
+          <p class="temp-value">{{ weatherData.current?.relative_humidity_2m }}%</p>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <div class="card-icon">??</div>
+        <div class="card-content">
+          <h3>Vento</h3>
+          <p class="temp-value">{{ weatherData.current?.wind_speed_10m }} km/h</p>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <div class="card-icon">??</div>
+        <div class="card-content">
+          <h3>Nebulosidade</h3>
+          <p class="temp-value">{{ weatherData.current?.cloud_cover }}%</p>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <div class="card-icon">???</div>
+        <div class="card-content">
+          <h3>Precipitação</h3>
+          <p class="temp-value">{{ weatherData.current?.precipitation }} mm</p>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <div class="card-icon">??</div>
+        <div class="card-content">
+          <h3>Pressão</h3>
+          <p class="temp-value">{{ weatherData.current?.pressure_msl }} hPa</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-description">
+      <p><strong>Condição:</strong> {{ getWeatherDescription(weatherData.current?.weather_code) }}</p>
+      <p><strong>Fuso horário:</strong> {{ weatherData.timezone }}</p>
+    </div>
+
+    <div class="actions">
+      <button (click)="searchForecast()" class="forecast-btn">
+        ?? Ver Previsão de 7 Dias
+      </button>
+    </div>
+  </div>
+</div>

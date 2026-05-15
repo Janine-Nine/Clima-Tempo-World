@@ -1,31 +1,27 @@
-# 🌤️ Clima Tempo World
+# Frontend
 
-Clima Tempo World é um site simples e moderno de previsão do tempo, desenvolvido com **HTML, CSS e JavaScript puro**, que consome dados reais da API **Open-Meteo**.  
-O objetivo do projeto é praticar consumo de API, manipulação do DOM e organização de layout responsivo — tudo sem frameworks.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
 
----
+## Development server
 
-## 🔎 Funcionalidades
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-- 🔍 Busca de clima por cidade
-- 🌡️ Temperatura atual em °C
-- 💨 Velocidade do vento
-- 💧 Umidade do ar
-- 📅 Data e hora local
-- 📱 Layout responsivo (desktop e mobile)
-- 🎨 Interface moderna com efeito glassmorphism
+## Code scaffolding
 
----
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## 🛠️ Tecnologias Utilizadas
+## Build
 
-- **HTML5** — estrutura da aplicação  
-- **CSS3** — layout, responsividade e efeitos visuais  
-- **JavaScript (ES6+)** — consumo de API e atualização dinâmica da interface  
-- **Open-Meteo API** — dados climáticos em tempo real  
-- **Google Fonts (Inter)** — tipografia
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
----
+## Running unit tests
 
-## 📁 Estrutura do Projeto
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

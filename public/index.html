@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clima Tempo World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veja a previsão do tempo de forma rápida, moderna e responsiva.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app container">
+    <header class="header" role="banner">
+      <div class="brand">
+        <h1>🌤️ Clima Tempo World</h1>
+        <p class="tag">Previsão rápida e clara</p>
+      </div>
+      <form class="search" role="search" onsubmit="buscarClima(); return false;">
+        <label for="city" class="sr-only">Buscar cidade</label>
+        <input type="search" id="city" placeholder="Ex: São Paulo" autocomplete="off" aria-label="Buscar cidade">
+        <button type="submit" aria-label="Buscar">🔎</button>
+      </form>
+    </header>
+    <section class="hero" aria-live="polite">
+      <div class="hero-grid">
+        <article class="current-card" id="weather">
+          <div class="location">
+            <h2 class="city">Cidade, País</h2>
+            <time class="date">--</time>
+          </div>
+          <div class="weather-main">
+            <div class="icon" aria-hidden="true">
+              <svg width="80" height="80" viewBox="0 0 64 64" fill="currentColor">
+                <circle cx="32" cy="28" r="10"/>
+                <path d="M32 4v8M32 52v8M4 32h8M52 32h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="temps">
+              <div class="temp-now">
+                <span class="value">--°C</span>
+                <span class="desc">Digite uma cidade</span>
+              </div>
+              <ul class="meta">
+                <li>Sensação: <strong>--</strong></li>
+                <li>Vento: <strong>--</strong></li>
+                <li>Humidade: <strong>--</strong></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <aside class="forecast" aria-label="Previsão para os próximos dias">
+          <h3>Próximos dias</h3>
+          <ul class="forecast-list">
+            <li class="forecast-item"><span>Qui</span><span>☁️</span><span>22 / 28</span></li>
+            <li class="forecast-item"><span>Sex</span><span>🌧️</span><span>20 / 24</span></li>
+            <li class="forecast-item"><span>Sáb</span><span>⛅</span><span>21 / 27</span></li>
+            <li class="forecast-item"><span>Dom</span><span>☀️</span><span>23 / 30</span></li>
+            <li class="forecast-item"><span>Seg</span><span>🌦️</span><span>22 / 26</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+    <footer class="footer" role="contentinfo">
+      <p>Dados reais via <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> — © 2026 Clima Tempo World</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+

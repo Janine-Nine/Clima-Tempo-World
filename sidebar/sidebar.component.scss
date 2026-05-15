@@ -1,0 +1,29 @@
+mat-sidenav {
+  background: #020617;
+  border-right: 1px solid var(--border);
+}
+
+mat-nav-list a {
+  color: var(--text-muted);
+  border-radius: 10px;
+  margin: 4px 8px;
+}
+
+mat-nav-list a:hover {
+  background: var(--surface-light);
+  color: white;
+}
+button {
+  border-radius: 10px;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  background: var(--primary);
+}
+mat-form-field {
+  width: 100%;
+}
+
+input {
+  color: var(--text);
+}

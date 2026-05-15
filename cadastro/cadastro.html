@@ -1,0 +1,9 @@
+<mat-card>
+  <h2>Cadastro</h2>
+
+  <input placeholder="Nome" [(ngModel)]="name">
+  <input placeholder="Email" [(ngModel)]="email">
+  <input type="password" [(ngModel)]="password">
+
+  <button (click)="register()">Cadastrar</button>
+</mat-card>
